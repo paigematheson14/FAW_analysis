@@ -5,3 +5,7 @@
 3. Check the qc of the raw data using fastqc and multiqc (fastqc.sl)
 4. Index reference genome (bwa_index.sl)
 5. Align Amy's data to the new reference genome (align_array.sl)
+
+
+# Environmental data 
+We need a description for all of the environments. Each row will be a location on earth - one pixel covering approx 1km x 1km; each column is an environmental measurement at that spot, e.g., rainful, temperature, % forest, % cropland, etc. 
