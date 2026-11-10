@@ -13,3 +13,4 @@ We need a description for all of the environments. Each row will be a location o
 1. Download the environmental data from 1971-2010 from CHELSA (download_chelsa.sl; check_chelsa.R)
 2. Download land cover information from Copernicus (download_landcover.sl)
 3. Download crop data for maize, corn, sugarcane, sorgum, cotton and rice from 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SWPENT'. The file to choose is 'spam2020V2r2_global_harvested_area.geotiff.zip'. Put this file in your directory and extract the aforementioned target crop data (extract_spam.sl)
+4. Build one table from all of these environmental values (climate, landcover, crops) for all of the sampling locations (global) and a matching table and set of maps for NZ and the Pacific islands all on the same 1km grid (env_nz_pacific.R; env_nz_pacific.sl)
