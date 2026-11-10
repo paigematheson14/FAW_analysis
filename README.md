@@ -4,7 +4,7 @@
 2. convert sra format to fastq (convert_sra.sl)
 3. Check the qc of the raw data using fastqc and multiqc (fastqc.sl)
 4. Index reference genome (bwa_index.sl)
-5. Align Amy's data to the new reference genome (align_array.sl)
+5. Align Amy's data to the new reference genome (bwa_align.sl)
 
 
 # Environmental data 
