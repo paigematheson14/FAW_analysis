@@ -11,3 +11,4 @@
 We need a description for all of the environments. Each row will be a location on earth - one pixel covering approx 1km x 1km; each column is an environmental measurement at that spot, e.g., rainful, temperature, % forest, % cropland, etc. 
 
 1. Download the environmental data from 1971-2010 from CHELSA (download_chelsa.sl; check_chelsa.R)
+2. Download land cover information from Copernicus (download_landcover.sl)
