@@ -26,4 +26,4 @@ done
 module purge
 module load R-Geo/4.3.2-foss-2023a
 cd "$WORKDIR"
-Rscript step6_check_chelsa.R
+Rscript check_chelsa.R
