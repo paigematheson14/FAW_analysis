@@ -9,3 +9,5 @@
 
 # Environmental data 
 We need a description for all of the environments. Each row will be a location on earth - one pixel covering approx 1km x 1km; each column is an environmental measurement at that spot, e.g., rainful, temperature, % forest, % cropland, etc. 
+
+1. Download R-geo (terra uses version 4.3.2-foss-2023a)
