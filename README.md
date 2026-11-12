@@ -5,6 +5,7 @@
 3. Check the qc of the raw data using fastqc and multiqc (fastqc.sl)
 4. Index reference genome (bwa_index.sl)
 5. Align Amy's data to the new reference genome (bwa_align.sl)
+6. Align new data to new reference genome (align_new_data.sl)
 
 
 # Environmental data 
