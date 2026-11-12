@@ -10,7 +10,7 @@
 
 
 # Environmental data 
-We need a description for all of the environments. Each row will be a location on earth - one pixel covering approx 1km x 1km; each column is an environmental measurement at that spot, e.g., rainful, temperature, % forest, % cropland, etc. 
+We need a description for all of the environments. Each row will be a location on earth - one pixel covering approx 1km x 1km; each column is an environmental measurement at that spot, e.g., rainful, temperature, % forest, % cropland, etc. Might not use crop/landcover data because it might add little information to the model (check with Louise, Manpreet, Ang)
 
 1. Download the environmental data from 1971-2010 from CHELSA (download_chelsa.sl; check_chelsa.R)
 2. Download land cover information from ESA WorldCover 2021 (download_worldcover.sl)
