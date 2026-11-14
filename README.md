@@ -14,6 +14,8 @@ We will create a reference list of trustworthy SNPs from a subset of good qualit
 2. Pick the top samples from NZ and Fiji (in terms of coverage) to add to the samples that the French team chose for the training dataset. Based on Matieu's notes we want max 5 individuals from any given locality with coverage greater than 10X and <200X. 
 3. Check that all of them are aligned to the same reference genome (I did this and found out that my NZ samples were aligned to a slightly different version of the reference genome, e.g., without mitochondrial, so had to realign my NZ/Pacific samples to the same genome as the French team
 4. Create a txt file that has the path to the bams that we want to use (e.g., bam.leg.list)
+5. Split the S. frug genome into 100kb chunks (French team did this already)
+6. Perform FreeBayes on the smaller dataset (freebayes.sl)
 
 
 # Environmental data 
