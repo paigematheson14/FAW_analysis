@@ -13,7 +13,7 @@ We will create a reference list of trustworthy SNPs from a subset of good qualit
 1. Create a list of all of the samples we have and where they are stored (```ls ../01_bam_french_data/bam_files_public/*.bam ../03_amys_data/bams/*.bam ../07_align_new/*.bam > all.bams.list```)
 2. Pick the top samples from NZ and Fiji (in terms of coverage) to add to the samples that the French team chose for the training dataset. Based on Matieu's notes we want max 5 individuals from any given locality with coverage greater than 10X and <200X. 
 3. Check that all of them are aligned to the same reference genome (I did this and found out that my NZ samples were aligned to a slightly different version of the reference genome, e.g., without mitochondrial, so had to realign my NZ/Pacific samples to the same genome as the French team
-4. 
+4. Create a txt file that has the path to the bams that we want to use (e.g., bam.leg.list)
 
 
 # Environmental data 
