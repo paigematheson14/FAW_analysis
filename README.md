@@ -17,7 +17,7 @@ We will create a reference list of trustworthy SNPs from a subset of good qualit
 5. Split the S. frug genome into 100kb chunks (French team did this already)
 6. Remove Wolbachia and mitogenome chunks ```grep -vE '^(MT|Wspic)[:[:space:]]' ../01_bam_french_data/Sfrug.chunks100kb > Sfrug.chunks100kb.nuclear
 wc -l ../01_bam_french_data/Sfrug.chunks100kb Sfrug.chunks100kb.nuclear``` because it will affect pop genomic stuff
-7. Perform FreeBayes on the smaller dataset (freebayes.sl); FIRST Do: ```PER_TASK=50``` ```n=$(wc -l < ../01_bam_french_data/Sfrug.chunks100kb)```, then submit as ```sbatch --array=1-$(( (n + PER_TASK - 1) / PER_TASK )) freebayes.sl```
+7. Perform FreeBayes on the smaller dataset (freebayes.sl); FIRST Do: ```PER_TASK=50``` ```n=$(wc -l < ../01_bam_french_data/Sfrug.chunks100kb.nuclear)```, then submit as ```sbatch --array=1-$(( (n + PER_TASK - 1) / PER_TASK )) freebayes.sl```
 
 
 # Environmental data 
