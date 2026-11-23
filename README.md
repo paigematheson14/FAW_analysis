@@ -15,14 +15,11 @@ We will create a reference list of trustworthy SNPs from a subset of good qualit
 3. Check that all of them are aligned to the same reference genome (I did this and found out that my NZ samples were aligned to a slightly different version of the reference genome, e.g., without mitochondrial, so had to realign my NZ/Pacific samples to the same genome as the French team
 4. Create a txt file that has the path to the bams that we want to use (e.g., bam.leg.list)
 5. Split the S. frug genome into 100kb chunks (French team did this already)
-6. Remove Wolbachia and mitogenome chunks ```grep -vE '^(MT|Wspic)[:[:space:]]' ../01_bam_french_data/Sfrug.chunks100kb > Sfrug.chunks100kb.nuclear```
+6. Remove Wolbachia chunks ```grep -vE '^(MT|Wspic)[:[:space:]]' ../01_bam_french_data/Sfrug.chunks100kb > Sfrug.chunks100kb.nuclear```
 7. Perform FreeBayes on the smaller dataset (freebayes.sl); FIRST Do: ```PER_TASK=50``` ```n=$(wc -l < ../01_bam_french_data/Sfrug.chunks100kb.nuclear)```, then submit as ```sbatch --array=1-$(( (n + PER_TASK - 1) / PER_TASK )) freebayes.sl```
+8. Concatenate all the chunks (freebayes_concatenate.sl)
+9. Check that it worked by comparing number of chunks in fb_chunks with number of lines in the panel.snp.vcf
 
 
 # Environmental data 
 We need a description for all of the environments. Each row will be a location on earth - one pixel covering approx 1km x 1km; each column is an environmental measurement at that spot, e.g., rainful, temperature, % forest, % cropland, etc. Might not use crop/landcover data because it might add little information to the model (check with Louise, Manpreet, Ang)
-
-1. Download the environmental data from 1971-2010 from CHELSA (download_chelsa.sl; check_chelsa.R)
-2. Download land cover information from ESA WorldCover 2021 (download_worldcover.sl)
-3. Download crop data for maize, corn, sugarcane, sorgum, cotton and rice from 'https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/SWPENT'. The file to choose is 'spam2020V2r2_global_harvested_area.geotiff.zip'. Put this file in your directory and extract the aforementioned target crop data (extract_spam.sl)
-4. Build one table from all of these environmental values (climate, landcover, crops) for all of the sampling locations (global) and a matching table and set of maps for NZ and the Pacific islands all on the same 1km grid (env_nz_pacific2.R; env_nz_pacific.sl)
