@@ -18,8 +18,8 @@ We will create a reference list of trustworthy SNPs from a subset of good qualit
 6. Remove Wolbachia chunks ```grep -vE '^(MT|Wspic)[:[:space:]]' ../01_bam_french_data/Sfrug.chunks100kb > Sfrug.chunks100kb.nuclear```
 7. Perform FreeBayes on the smaller dataset (freebayes.sl); FIRST Do: ```PER_TASK=50``` ```n=$(wc -l < ../01_bam_french_data/Sfrug.chunks100kb.nuclear)```, then submit as ```sbatch --array=1-$(( (n + PER_TASK - 1) / PER_TASK )) freebayes.sl```
 8. Concatenate all the chunks (freebayes_concatenate.sl)
-9. Check that it worked by comparing number of chunks in fb_chunks with number of lines in the panel.snp.vcf
-
+9. Do a clean up of the vcf first to keep only QUAL >= 20 and biallelic sites, decomposes complex alleles with vcfwave, normalises, keeps SNPs only, sorts, and removes duplicates (bcftools_filter_panel.sl)
+10. Filter for quality - remove false positives using the INFO statistics: depth window per chromosome (centred on each peak because 8 of the chromosomes had binomial distributions in depth?), NS, minor allele fraction, read-placement balance, strand and end-placement bias, and mapping-quality ratio. This script also drops MT and chr24 because MT was crazy and chr24 was extremely poor. 
 
 # Environmental data 
 We need a description for all of the environments. Each row will be a location on earth - one pixel covering approx 1km x 1km; each column is an environmental measurement at that spot, e.g., rainful, temperature, % forest, % cropland, etc. Might not use crop/landcover data because it might add little information to the model (check with Louise, Manpreet, Ang)
